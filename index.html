@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sh4d0w_Err0r | Portfolio Digital</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Canvas para nieve navideña -->
+    <canvas id="snowCanvas"></canvas>
+
+    <!-- Indicador de progreso de scroll -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navegación principal -->
+    <nav class="main-nav" id="mainNav">
+        <div class="nav-container">
+            <a href="#hero" class="logo">Sh4d0w<span>_Err0r</span></a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="#hero" class="nav-link active">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">Sobre Mí</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#portfolio" class="nav-link">Portafolio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#books" class="nav-link">Libros</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#social" class="nav-link">Redes</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contacto</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Indicador de secciones -->
+    <div class="section-indicator" id="sectionIndicator">
+        <div class="section-dot active" data-section="Inicio" data-target="hero"></div>
+        <div class="section-dot" data-section="Sobre Mí" data-target="about"></div>
+        <div class="section-dot" data-section="Portafolio" data-target="portfolio"></div>
+        <div class="section-dot" data-section="Libros" data-target="books"></div>
+        <div class="section-dot" data-section="Redes" data-target="social"></div>
+        <div class="section-dot" data-section="Contacto" data-target="contact"></div>
+    </div>
+
+    <!-- Botón de scroll to top -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Modal para visualizar PDF -->
+    <div class="pdf-modal" id="pdfModal">
+        <div class="pdf-modal-content">
+            <div class="pdf-modal-header">
+                <div class="pdf-modal-title">
+                    <i class="fas fa-book"></i>
+                    Programación Lineal en Java
+                </div>
+                <button class="pdf-modal-close" id="pdfModalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="pdf-modal-body">
+                <iframe class="pdf-viewer" src="main.pdf" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="main-container">
+        <!-- Sección Hero -->
+        <section id="hero" class="section">
+            <div class="particles-container" id="hero-particles"></div>
+            <div class="section-content">
+                <div class="hero-content">
+                    <h1 class="hero-title">Creador de Contenido & Desarrollador</h1>
+                    <p class="hero-subtitle">Transformando líneas de código en experiencias digitales memorables. Comparto mi pasión por la programación, diseño web y tecnología a través de contenido educativo y proyectos innovadores.</p>
+                    <div class="hero-buttons">
+                        <a href="#portfolio" class="btn btn-primary">
+                            <i class="fas fa-code"></i> Ver Proyectos
+                        </a>
+                        <a href="#social" class="btn btn-secondary">
+                            <i class="fas fa-play-circle"></i> Ver Contenido
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección About -->
+        <section id="about" class="section">
+            <div class="about-bg"></div>
+            <div class="section-content">
+                <div class="about-container">
+                    <div class="about-content">
+                        <h2 class="section-title">Sobre Mí</h2>
+                        <p class="section-subtitle">Desarrollador full-stack y creador de contenido especializado en tecnología</p>
+                        
+                        <div class="about-text">
+                            <p>Hola, soy <span class="highlight">Adrián Velasco</span>, creador de contenido especializado en informática y programación con 2 años de experiencia en el desarrollo de software y la creación de contenido educativo.</p>
+                            <p>Mi misión es hacer que la programación sea accesible y divertida para todos, desde principiantes hasta desarrolladores experimentados. Creo contenido sobre desarrollo web, inteligencia artificial, ciberseguridad y nuevas tecnologías.</p>
+                            <p>Enfoco mi trabajo en proyectos open-source, tutoriales prácticos y análisis de tendencias tecnológicas. Me apasiona explorar cómo la tecnología puede resolver problemas reales y mejorar nuestra vida diaria.</p>
+                        </div>
+                        
+                        <div class="tech-grid">
+                            <div class="tech-item">JavaScript</div>
+                            <div class="tech-item">Python</div>
+                            <div class="tech-item">Java</div>
+                            <div class="tech-item">PHP</div>
+                            <div class="tech-item">Bash</div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-visual">
+                        <div class="neon-card-3d">
+                            <div class="card-content">
+                                <i class="fas fa-laptop-code" style="font-size: 4rem; color: var(--primary-color); margin-bottom: 20px;"></i>
+                                <h3 style="font-family: var(--font-title); margin-bottom: 10px;">Código + Creatividad</h3>
+                                <p style="color: var(--text-dim);">Donde la lógica se encuentra con la innovación</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Portfolio -->
+        <section id="portfolio" class="section">
+            <div class="section-content">
+                <div class="portfolio-header">
+                    <h2 class="portfolio-title">Mis Proyectos</h2>
+                    <p class="portfolio-subtitle">Una selección de mis proyectos más recientes en desarrollo web, aplicaciones y herramientas de código abierto.</p>
+                </div>
+                
+                <div class="portfolio-grid">
+                    <!-- Proyecto 1 -->
+                    <div class="project-card">
+                        <div class="card-header">
+                            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="CodeLearn Platform">
+                            <div class="card-tags">
+                                <span class="card-tag">HTML</span>
+                                <span class="card-tag">CSS</span>
+                                <span class="card-tag">JS</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Dashboard de Objetivos</h3>
+                            <p class="card-desc">Plataforma interactiva para tener un control de los objetivos que cumples y los que no, generandote una grafica para que en todo momento veas tu progreso</p>
+                            <div class="card-footer">
+                                <a href="https://github.com/Adri-Coding-Dev/DashBoard_Objetivos" class="card-link">
+                                    <i class="fab fa-github"></i> Repositorio
+                                </a>
+                                <a href="https://adri-coding-dev.github.io/DashBoard_Objetivos/" class="card-link">
+                                    <i class="fas fa-external-link-alt"></i> Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Proyecto 2 -->
+                    <div class="project-card">
+                        <div class="card-header">
+                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="DevUtils Tools">
+                            <div class="card-tags">
+                                <span class="card-tag">Java</span>
+                                <span class="card-tag">Swing</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Ajedrez en Java</h3>
+                            <p class="card-desc">Ajedrez con interfaz grafica para jugar con amigos y pasarlo genial. Con todas las reglas y con promoción de piezas</p>
+                            <div class="card-footer">
+                                <a href="https://github.com/Adri-Coding-Dev/Master_Chess" class="card-link">
+                                    <i class="fab fa-github"></i> Repositorio
+                                </a>
+                                <a href="https://github.com/Adri-Coding-Dev/Master_Chess" class="card-link">
+                                    <i class="fas fa-external-link-alt"></i> Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Proyecto 3 -->
+                    <div class="project-card">
+                        <div class="card-header">
+                            <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="AI Code Assistant">
+                            <div class="card-tags">
+                                <span class="card-tag">Java</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Advent Of Code 2025 Java</h3>
+                            <p class="card-desc">Solucion del Advent of Code de 2025 completo en Java, modular para soportar varios años con POO</p>
+                            <div class="card-footer">
+                                <a href="https://github.com/Adri-Coding-Dev/Advent_of_Code_Java" class="card-link">
+                                    <i class="fab fa-github"></i> Repositorio
+                                </a>
+                                <a href="https://github.com/Adri-Coding-Dev/Advent_of_Code_Java" class="card-link">
+                                    <i class="fas fa-external-link-alt"></i> Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Books - Actualizada para coincidir con el estilo -->
+        <section id="books" class="section">
+            <div class="section-content">
+                <div class="books-header">
+                    <h2 class="books-title">Libro Destacado</h2>
+                    <p class="books-subtitle">Un trabajo completo sobre programación lineal implementada en Java, con ejemplos prácticos y aplicaciones reales.</p>
+                </div>
+                
+                <div class="single-book-container">
+                    <div class="single-book-card">
+                        <div class="book-header">
+                            <i class="fas fa-book-open book-icon-main"></i>
+                            <h2 class="book-title-main">Programación Lineal en Java</h2>
+                            <div class="book-author">por Adrián Velasco</div>
+                            <p class="book-desc-main">
+                                Una guía completa sobre la implementación de algoritmos de programación lineal en Java. 
+                                Este libro cubre desde los conceptos básicos hasta aplicaciones avanzadas, incluyendo 
+                                el método simplex, problemas de transporte, asignación y optimización de recursos. 
+                                Perfecto para estudiantes, desarrolladores y profesionales que buscan aplicar 
+                                técnicas de optimización en sus proyectos.
+                            </p>
+                        </div>
+                        
+                        <div class="book-actions">
+                            <button class="book-btn book-btn-read" id="readPdfBtn">
+                                <i class="fas fa-book-reader"></i> Leer Documento
+                            </button>
+                            <button class="book-btn book-btn-download" id="downloadPdfBtn">
+                                <i class="fas fa-download"></i> Descargar PDF
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Social -->
+        <section id="social" class="section">
+            <div class="section-content">
+                <div class="social-header">
+                    <h2 class="social-title">Conéctate Conmigo</h2>
+                    <p class="social-subtitle">Sígueme en mis redes sociales para contenido exclusivo, tutoriales en vivo y actualizaciones sobre mis proyectos.</p>
+                </div>
+                
+                <div class="social-grid">
+                    <a href="https://www.youtube.com/@Shadow_Error_Hack" target="_blank" class="social-card youtube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://github.com/Adri-Coding-Dev" target="_blank" class="social-card github">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.twitch.tv/coding_with_adri" target="_blank" class="social-card twitch">
+                        <i class="fab fa-twitch"></i>
+                    </a>
+                    <a href="https://discord.gg/RRSpAz6sM9" target="_blank" class="social-card discord">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Contacto -->
+        <section id="contact" class="section">
+            <div class="section-content">
+                <div class="contact-header">
+                    <h2 class="contact-title">Contáctame</h2>
+                    <p class="contact-subtitle">¿Tienes alguna pregunta, propuesta o quieres colaborar? ¡No dudes en escribirme!</p>
+                </div>
+                
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Correo Electrónico</h3>
+                                <p>adricoding647@gmail.com</p>
+                                <p>Responderé lo antes posible</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Ubicación</h3>
+                                <p>Remoto</p>
+                                <p>Trabajo desde cualquier lugar</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Disponibilidad</h3>
+                                <p>Lunes a Viernes</p>
+                                <p>9:00 AM - 6:00 PM (GMT-5)</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-container">
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Nombre</label>
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Tu nombre" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Correo Electrónico</label>
+                                <input type="email" id="email" name="email" class="form-control" placeholder="tucorreo@ejemplo.com" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Mensaje</label>
+                                <textarea id="message" name="message" class="form-control" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="form-submit" id="submitBtn">
+                                <i class="fas fa-paper-plane"></i> Enviar Mensaje
+                            </button>
+                            
+                            <div class="form-message" id="formMessage"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">DevCreator</div>
+            <div class="footer-links">
+                <a href="#hero">Inicio</a>
+                <a href="#about">Sobre Mí</a>
+                <a href="#portfolio">Portafolio</a>
+                <a href="#books">Libros</a>
+                <a href="#social">Redes</a>
+                <a href="#contact">Contacto</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 DevCreator | Portfolio Digital. Todos los derechos reservados.</p>
+            <p style="margin-top: 10px;">Creado con <i class="fas fa-heart" style="color: var(--accent-color);"></i> y mucho código.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
